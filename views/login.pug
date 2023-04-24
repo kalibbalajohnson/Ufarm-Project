@@ -1,0 +1,50 @@
+doctype html
+head
+  link(rel='icon' type='image/png' sizes='16x16' href='../favicon/favicon-16x16.png')
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(href='../css/boostrap-5.3/css/bootstrap.css' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css')
+  link(rel='stylesheet' href='../css/custom.css')
+  title Login Ufarm
+  style.
+    body {
+    background-image: url(../photos/photo14.jpg);
+    background-size: cover;
+    }
+// Nav starts here
+// <div w3-include-html="../includes/navbar.html"></div>
+// Nav ends here
+.container(style='margin-top: 150px')
+  .row
+    .col
+    .col-5
+      #logincard.opacity-100
+        h1(style='text-align: center; color:white;') Login
+        .card-body
+          form#regForm.floating-form(action='/login' name='login' onsubmit='return Validate();' method='POST')
+            fieldset
+              .form-floating.mb-3
+                input#floatingInput.form-control(type='text' name='username' placeholder='name@example.com')
+                small#mailErr
+                label(for='floatingInput') Unique ID
+              .form-floating.mb-3
+                input#floatingPassword.form-control(type='password' name='password' placeholder='Password')
+                label(for='floatingPassword') Password
+                small#passErr
+                br
+            button.btn.btn-success(type='submit') Login
+            br
+            br
+            p
+              | If you have no account, please sign up here 
+              a(style='color: rgb(48, 220, 250);' href='/signup') Sign up
+              |  .
+    .col
+// footer starts here
+// <div w3-include-html="../includes/footer.html"></div>
+// footer ends here
+script(src='../js/validate.js')
+script(src='../css/boostrap-5.3/js/bootstrap.bundle.js')
+script(src='./regFormValidation2.js')
+// <script src="../js/custom.js"></script>

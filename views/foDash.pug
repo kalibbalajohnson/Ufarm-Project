@@ -1,0 +1,133 @@
+doctype html
+head
+  link(rel='icon' type='image/png' sizes='16x16' href='../favicon/favicon-16x16.png')
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(href='../css/boostrap-5.3/css/bootstrap.css' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous' referrerpolicy='no-referrer')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')
+  link(rel='stylesheet' href='../css/custom.css')
+  title U-Farm
+// Nav starts here
+div(w3-include-html='../includes/navbar.html')
+// Nav ends here
+.container-fluid(style='margin-top: 150px')
+  .row
+    .col-3
+      .sidebar
+        p
+        h5(style='text-align: center; font-family:Trebuchet MS, Times, serif; color:rgb(0, 255, 106);')
+          | Farmer One Dashboard
+        p
+        hr
+        p
+        a(href='/fodash' style="text-decoration: none; color:white")
+          h6(style='text-align: center;')
+            | Orders and Bookings
+            i.fa.fa-shop
+        p
+        hr
+        p
+        a(href='/ufinfo' style="text-decoration: none; color:white")
+          h6(style='text-align: center;')
+            | Registered UF 
+            i.fas.fa-arrow-alt-circle-up
+        p
+        hr
+        p
+        a(href='/help' style="text-decoration: none; color:white")
+          h6(style='text-align: center;')
+            | Help Center 
+            i.far.fa-comment-dots
+        p
+        hr
+        p
+          form(action='logout' method='post')
+            button(style='margin-left: 90px;' type='submit') Sign out 
+        hr
+        p(style='font-size: 10px; text-align: center; margin-top: 80px;')
+          span(style='font-size: 15px;') Ufarm
+          |  &copy; 2023
+    .col-9
+      // <h4>Dashboard <i class="fa fa-line-chart" style="font-size:24px"></i></h4>
+      // <br>
+      div(style='margin-top: -20px; margin-bottom: 160px;')
+        #cards.card(style='width:55rem;  box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.3); text-align: center;  background-color:  rgb(23, 23, 31); border-radius: 14px;')
+          .card-body
+            h4.card-title(style='color: white;') Welcome
+            h6(style='color: grey;')
+              | Explore the dashboard to find out any new current updates for you
+              | on the dashboard 
+              br
+      //h5(style='text-align: center; ') Urban Farmers
+      //- table.table.table-striped.table-dark(style='margin-bottom: 100px; margin-top: 29px;')
+      //-   thead
+      //-     tr
+      //-       th(scope='col') Full Name
+      //-       //- th(scope='col') Lastname
+      //-       th(scope='col') Unique ID
+      //-       th(scope='col') Dob
+      //-       th(scope='col') Gender
+      //-       th(scope='col') Email 
+      //-       th(scope='col') Address
+      //-   tbody
+      //-   if urbanFarmers.length 
+      //-       each urbanFarmer in urbanFarmers
+      //-           tr
+      //-               td #{urbanFarmer.firstname} #{urbanFarmer.lastname}
+      //-               td #{urbanFarmer.username}
+      //-               td #{urbanFarmer.dob}
+      //-               td #{urbanFarmer.gender}
+      //-               td #{urbanFarmer.email}
+      //-               td #{urbanFarmer.address}
+      //-               td 
+      //-                   //-     form(method='post', action='/students/delete')
+      //-                   //-         input(type='hidden', name="id", value=student._id)
+      //-                   //-         button.btn.btn-danger(type='submit') Delete
+
+      //-                   //- td        
+      //-                   //-     a.btn.btn-dark.btn-block(href='/edit_student/'+student._id) Edit
+      //-   else 
+      //-       p 
+      //-         h4 There are no Urban Farmers registered yet
+
+      h5(style='text-align: center;;') Orders and Bookings
+      table.table.table-striped.table-dark(style='margin-bottom: 100px; margin-top: 29px;')
+        thead
+          tr
+            th(scope='col') Full name
+            th(scope='col') Phone
+            th(scope='col') Address
+            th(scope='col') Product
+            th(scope='col') Price
+            th(scope='col') Quantity
+            th(scope='col') Ship
+            th(scope='col') Payment
+            th(scope='col') Gender
+            th(scope='col') Action
+        tbody
+        if students.length
+            each student in students 
+                tr          
+                   td #{student.fullname}
+                    td #{student.phone}
+                    td #{student.address}
+                    td #{student.product}
+                    td #{student.price}
+                    td #{student.quantity}
+                    td #{student.ship}
+                    td #{student.pay}
+                    td #{student.gender}
+                    td 
+                      form(action="/foDash/delete" method='post') 
+                        input(type="hidden" name='id' value= student.id)
+                        button.btn.btn-danger(type='submit') Delete  
+                    
+        else
+            p there are no students in the database
+
+// Nav starts here
+div(w3-include-html='../includes/footer.html')
+// Nav ends here
+script(src='../js/custom.js')
+script(src='../css/boostrap-5.3/js/bootstrap.bundle.js')

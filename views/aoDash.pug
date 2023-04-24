@@ -1,0 +1,100 @@
+doctype html
+head
+  link(rel='icon' type='image/png' sizes='16x16' href='../favicon/favicon-16x16.png')
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(href='../css/boostrap-5.3/css/bootstrap.css' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous' referrerpolicy='no-referrer')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')
+  link(rel='stylesheet' href='../css/custom.css')
+  title AO Dashboard
+// Nav starts here
+div(w3-include-html='../includes/navbar.html')
+// Nav ends here
+.container-fluid(style='margin-top: 150px')
+  .row
+    .col-3
+      .sidebar
+        p
+        h5(style='text-align: center; font-family:Trebuchet MS, Times, serif; color:rgb(0, 255, 106);')
+          | Agricultural Officer Dashboard
+        p
+        hr
+        p
+         a(href='/aodash' style="text-decoration: none; color:white")
+          h6(style='text-align: center;')
+            | Appointed FO 
+            i.fas.fa-user-friends
+        p
+        hr
+        p
+        a(href='/foinfo' style='text-decoration: none; color:white')
+          h6(style='text-align: center;')
+            |  Registerd FO 
+            i.fas.fa-arrow-alt-circle-up
+        p
+        hr
+        p
+        a(href='/help' style='text-decoration: none; color:white')
+          h6(style='text-align: center;')
+            | Help Center 
+            i.far.fa-comment-dots
+        p
+        hr
+        p
+          form(action='logout' method='post')
+            button(style='margin-left: 90px;' type='submit') Sign out 
+        hr
+        p(style='font-size: 10px; text-align: center; margin-top: 80px;')
+          span(style='font-size: 15px;') Ufarm
+          |  &copy; 2023
+    .col-9
+      // <h4>Dashboard <i class="fa fa-line-chart" style="font-size:24px"></i></h4>
+      // <br>
+      div(style='margin-top: -20px; margin-bottom: 235px;')
+        #cards.card(style='width: 17rem; box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.4); background-color:   rgb(23, 23, 31); border-radius: 12px;')
+          .card-body
+            h5.card-title(style='color: white;') Ward
+            h6(style='font-size: 18px; color: white;') #{farmerWard}
+            p(style='color: grey;') Massaja Division is divided into four wards.
+        #cards.card(style='width: 18rem;  box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.4); background-color:   rgb(23, 23, 31); border-radius: 12px;')
+          .card-body
+            h5.card-title(style='color: white;') Number of Farmer Ones
+            h6(style='font-size: 18px; color: white;') #{activeFarmer}
+            p(style='color: grey;') The number of appointed farmer ones is four.
+        #cards.card(style='width: 17rem;  box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.4); background-color:  rgb(23, 23, 31); border-radius: 14px;')
+          .card-body
+            h5.card-title(style='color: white;') Number of Urban Farmers
+            h6(style='font-size: 18px; color: white; ') #{activeFarmers}
+            p(style='color: grey;') U farm has urban farmers.
+      h6(style='text-align: center; font-size: 20px;') Farmer One Table
+      table.table.table-striped.table-dark(style='margin-bottom: 100px; margin-top: 25px;')
+        thead
+          tr
+            th(scope='col') Name 
+            th(scope='col') Unique ID 
+            th(scope='col') Ward
+            th(scope='col') Email
+            th(scope='col') Address
+            th(scope='col') Date of Birth
+            th(scope='col') Status
+        tbody
+        if FarmerOnes.length 
+            each urbanFarmer in FarmerOnes
+                tr
+                  td #{urbanFarmer.firstname} #{urbanFarmer.lastname}
+                  td #{urbanFarmer.username}
+                  td #{urbanFarmer.ward}
+                  td #{urbanFarmer.email}
+                  td #{urbanFarmer.address}
+                  td #{urbanFarmer.dob}
+                  td
+                    button.btn.btn-success(type='submit') Appointed
+        else 
+            p 
+              h4 There are no Urban Farmers registered yet            
+// Nav starts here
+div(w3-include-html='../includes/footer.html')
+// Nav ends here
+script(src='../js/custom.js')
+script(src='../css/boostrap-5.3/js/bootstrap.bundle.js')

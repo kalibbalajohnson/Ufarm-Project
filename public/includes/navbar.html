@@ -1,0 +1,66 @@
+<nav id="thebignav" class="navbar bg-body-tertiary fixed-top">
+  <div id="thenav" class="container-fluid">
+    <a class="navbar-brand" href="/index">
+      <h1 style="color: white; font-family:Trebuchet MS, Times, serif;"
+        class="animate__animated animate__heartBeat">Ufarm</h1>
+    </a>
+    <form class="d-flex mt-3" role="search">
+      <input class="form-control me-2" type="search" placeholder=" Search for Products" aria-label="Search">
+      <button id="searchbtn" class="btn btn-light" type="submit">Search</button>
+    </form>
+    <!-- <i style="color: white; font-size: 33px;" class="fa-sharp fa-solid fa-user-large"></i> -->
+
+    <a href="/checkout" style="text-decoration: none; color: white; margin-left: 10px; "><i
+        class="fa-sharp fa-solid fa-cart-shopping" style="font-size: 24px; color: white; "></i> <span
+        style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode';"> Checkout</span> </a>
+    <button style="color: white;" class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <a style=" text-decoration: none; color: white;" href="/index">
+          <h4 class="offcanvas-title" id="offcanvasNavbarLabel">Ufarm  </h4>
+        </a>
+        <button style="color: white;" type="button" class="btn-close" data-bs-dismiss="offcanvas"
+          aria-label="Close"></button>
+      </div>
+      <hr>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a style="color: white;" class="nav-link active" aria-current="page" href="/home">Home <i
+                class="fa fa-shop"></i></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul style="background-color: #44a078; color: white;" class="dropdown-menu">
+              <li><a id="hort" class="dropdown-item" href="#horticulture">Horticulture</a></li>
+              <li><a id="poul" class="dropdown-item" href="#poultry">Poultry</a></li>
+              <li><a id="dia" class="dropdown-item" href="#diary">Diary Products</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/cart">Shopping Cart <i
+                class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About Us <i class="fa fa-tractor"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/help">Help Center <i class="fa fa-headset"></i></a>
+          </li>
+
+          <hr>
+          <div id="foot" class="col">
+            <!-- <small>Uganda's solution to the agricultural sector challenges and problems</small> -->
+            <p style="font-size: 10px;  "> <span style="font-size: 15px;">Ufarm</span> © 2023</p>
+          </div>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

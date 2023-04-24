@@ -1,0 +1,99 @@
+doctype html
+head
+  link(rel='icon' type='image/png' sizes='16x16' href='../favicon/favicon-16x16.png')
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(href='../css/boostrap-5.3/css/bootstrap.css' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous' referrerpolicy='no-referrer')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')
+  link(rel='stylesheet' href='../css/custom.css')
+  title U-Farm
+  style.
+    body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+// Nav starts here
+div(w3-include-html='../includes/navbar.html')
+// Nav ends here
+.container-fluid(style='margin-top: 150px;')
+  .row
+    .col-9(style='padding-left: 30px;')
+      h4(style='text-align: center; margin-bottom: 20px; color: rgb(4, 83, 4); font-family: Times New Roman; font-size: 30px;')
+        | Help Center 
+        i.far.fa-comment-dots
+      p
+        | Welcome to the Ufarm Help Center. Here, you&apos;ll find answers to frequently asked
+        | questions, as well as resources to help you get the most out of our platform.
+      p
+        | If you&apos;re a farmer, our help center provides guidance on how to list your products, manage your
+        | orders, and connect with buyers. We also offer tips and best practices for sustainable farming
+        | practices and how to promote your products effectively.
+      p
+        | If you&apos;re a buyer, our help center provides information on how to search for products, place
+        | orders,
+        | and track deliveries. We also offer resources to help you learn more about the farmers and the
+        | products you&apos;re purchasing, so you can make informed decisions about the food you eat.
+      hr
+      br
+      h4(style='text-align: center; margin-bottom: 20px; color: rgb(4, 83, 4); font-family: Times New Roman; ')
+        | Contact Us 
+        i.fa.fa-phone-volume(style='font-size: 21px;')
+      p
+        | At Ufarm, we&apos;re committed to providing excellent customer support and helping you get
+        | the most out of our platform. If you can&apos;t find what you&apos;re looking for in our help center, please
+        | don&apos;t hesitate to contact us directly. Our friendly and knowledgeable team is always here to help.
+        | Contact: (+256 7856872056 or +256 756732188)
+    .col-3
+      // <h4>Dashboard <i class="fa fa-line-chart" style="font-size:24px"></i></h4>
+      // <br>
+      .sidebar(style='background-color: white; color: black; height:570px; box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.3);  position:absolute;')
+        p
+        h5(style='text-align: center; color: green;')  FAQs 
+        p
+        hr
+        #accordionFlushExample.accordion.accordion-flush
+          .accordion-item
+            h2#flush-headingOne.accordion-header
+              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseOne' aria-expanded='false' aria-controls='flush-collapseOne')
+                | What services are provided?
+            #flush-collapseOne.accordion-collapse.collapse(aria-labelledby='flush-headingOne' data-bs-parent='#accordionFlushExample')
+              div Ufarm is an online platform in Uganda connecting farmers to the end market. 
+          .accordion-item
+            h2#flush-headingTwo.accordion-header
+              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseTwo' aria-expanded='false' aria-controls='flush-collapseTwo')
+                | How do I contact customer support?
+            #flush-collapseTwo.accordion-collapse.collapse(aria-labelledby='flush-headingTwo' data-bs-parent='#accordionFlushExample')
+              .accordion-body
+                | You can contact
+                | (+256 7856872056 or +256 756732188) .
+          .accordion-item
+            h2#flush-headingThree.accordion-header
+              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseThree' aria-expanded='false' aria-controls='flush-collapseThree')
+                | How long does delivery take?
+            #flush-collapseThree.accordion-collapse.collapse(aria-labelledby='flush-headingThree' data-bs-parent='#accordionFlushExample')
+              .accordion-body One to two working days.
+          .accordion-item
+            h2#flush-headingThree.accordion-header
+              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseThree' aria-expanded='false' aria-controls='flush-collapseThree')
+                | How do I pay for my orders?
+            #flush-collapseThree.accordion-collapse.collapse(aria-labelledby='flush-headingThree' data-bs-parent='#accordionFlushExample')
+              .accordion-body  Either cash and mobile money.
+          .accordion-item
+            h2#flush-headingThree.accordion-header
+              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseThree' aria-expanded='false' aria-controls='flush-collapseThree')
+                | What happens if I receive a product that is damaged ?
+            #flush-collapseThree.accordion-collapse.collapse(aria-labelledby='flush-headingThree' data-bs-parent='#accordionFlushExample')
+              .accordion-body
+                | You can return the product before a week after recieving
+                | the product.
+          .accordion-item
+            h2#flush-headingThree.accordion-header
+              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseThree' aria-expanded='false' aria-controls='flush-collapseThree')
+                | Can I cancel or modify my order after I&apos;ve placed it?
+            #flush-collapseThree.accordion-collapse.collapse(aria-labelledby='flush-headingThree' data-bs-parent='#accordionFlushExample')
+              .accordion-body Yes, that is possible.
+// Nav starts here
+div(w3-include-html='../includes/footer.html')
+// Nav ends here
+script(src='../js/custom.js')
+script(src='../css/boostrap-5.3/js/bootstrap.bundle.js')

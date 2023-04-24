@@ -1,0 +1,89 @@
+doctype html
+head
+  link(rel='icon' type='image/png' sizes='16x16' href='../favicon/favicon-16x16.png')
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(href='../css/boostrap-5.3/css/bootstrap.css' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous' referrerpolicy='no-referrer')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')
+  link(rel='stylesheet' href='../css/custom.css')
+  title U-Farm
+  style.
+    .price {
+    color: black;
+    padding: 20px;
+    margin-left: 50px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.3);
+    }
+    body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+// Nav starts here
+div(w3-include-html='../includes/navbar.html')
+// Nav ends here
+.container(style='margin-top: 150px')
+  h6(style="margin-left: 340px; font-size: 22pt; color: rgb(13, 14, 13); font-family: 'Trebuchet MS';")
+    | Shopping Cart 
+    i.fa-sharp.fa-solid.fa-cart-shopping(style='font-size: 20px; color: rgb(2, 100, 2); ')
+  .row
+    .col-9
+      br
+      table.table.table-striped(style='box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.5); border-radius: 9px;')
+        thead
+          tr
+            th(scope='col')
+            th(scope='col' style='color: green; font-size: 18px;') Product
+            th(scope='col' style='color: green; font-size: 18px;') Price
+            th(scope='col')
+        tbody
+          tr
+            th(scope='row')
+            td onions
+            td ugx 20,000
+            td
+              i.fa-regular.fa-trash-can(style='color: rgb(194, 27, 27); font-size: 18px;')
+          tr
+            th(scope='row')
+            td tomatoes
+            td ugx 20,000
+            td
+              i.fa-regular.fa-trash-can(style='color:  rgb(194, 27, 27); font-size: 18px;')
+          tr
+            th(scope='row')
+            td milk
+            td ugx 20,000 
+            td
+              i.fa-regular.fa-trash-can(style='color:   rgb(194, 27, 27); font-size: 18px;')
+          tr
+            th(scope='row')
+            td onions
+            td ugx 20,000
+            td
+              i.fa-regular.fa-trash-can(style='color:  rgb(194, 27, 27); font-size: 18px;')
+          tr
+            th(scope='row')
+            td potatoes
+            td ugx 20,000
+            td
+              i.fa-regular.fa-trash-can(style='color:  rgb(194, 27, 27); font-size: 18px;')
+    .col-3
+      // <h4>Dashboard <i class="fa fa-line-chart" style="font-size:24px"></i></h4>
+      // <br>
+      .price
+        p
+        h5(style='text-align: center;')  Total Price: 
+        p
+        hr
+        p
+        h6(style='text-align: center; color: green;')  UGX 250,0000
+        p
+        hr
+        a(href='/register')
+          button.btn.btn-dark(type='submit' style='margin-left: 40px; ') Checkout
+        hr
+// Nav starts here
+div(w3-include-html='../includes/footer.html')
+// Nav ends here
+script(src='../js/custom.js')
+script(src='../css/boostrap-5.3/js/bootstrap.bundle.js')

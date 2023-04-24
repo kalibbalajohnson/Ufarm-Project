@@ -1,0 +1,183 @@
+.dashboard-content {
+    margin-top: 30px;
+}
+
+#logincard {
+    box-shadow: 0px 8px 16px 0px black;
+    margin-bottom: 100px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+#signupcard {
+    box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.9);
+    margin-bottom: 100px;
+    border-radius: 20px;
+
+}
+
+.navbar-brand {
+    margin-right: 10px;
+    margin-left: 30px;
+}
+
+#footer {
+    position: sticky;
+    margin-top: 160px;
+    background-color: rgb(15, 15, 19);
+    color: whitesmoke;
+}
+
+#foot {
+    margin-top: 50px;
+}
+
+#carouselExampleSlidesOnly {
+    width: 600px;
+}
+
+.d-flex {
+    width: 600px;
+    margin: 18px;
+}
+
+.form-control {
+    border-radius: 16px;
+    height: 40px;
+}
+
+.btn-outline-success {
+    border-radius: 20px;
+}
+
+.sidebar {
+    height: 500px;
+    width: 265px;
+    margin-top: -60px;
+    background-color: rgb(15, 15, 19);
+    color: white;
+    position: fixed;
+}
+
+.floating-form {
+    padding: 40px;
+}
+
+.up {
+    margin-left: 100px;
+    margin-top: 30px;
+    margin-bottom: -30px;
+}
+
+#bigcard3 {
+    padding: 20px;
+    margin: top 20px;
+    margin-bottom: -70px;
+}
+
+#bigcard2 {
+    padding: 20px;
+    margin: top 20px;
+    margin-bottom: -25px;
+}
+
+#bigcard1 {
+    padding: 20px;
+    margin: top 20px;
+    margin-bottom: -25px;
+}
+
+
+.carouselExampleSlidesOnly {
+    margin-top: 500px;
+}
+
+#searchbtn {
+    border-radius: 20px;
+    height: 39px;
+}
+
+#thenav {
+    background-color: rgb(62, 143, 62);
+}
+
+.nav-link {
+    color: white;
+}
+
+.offcanvas {
+    background-color: rgb(61, 117, 61);
+    color: white;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.card-header {
+    color: white;
+}
+
+#smallcard:hover {
+    transform: scale(1.1);
+}
+
+#smallcard {
+    box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    margin-left: 26px;
+}
+
+.loginbody {
+
+    background-image: url(../photos/photo14.jpg);
+    background-size: cover;
+
+}
+
+.col-5 p {
+    color: white;
+}
+
+.FObackground {
+    background-image: url(../photos/photo14.jpg);
+    background-size: cover;
+}
+
+#register {
+    padding: 40px;
+    color: white;
+}
+
+#button {
+    box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#button4 {
+    box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.3);
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#button2 {
+    box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.3);
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#button3 {
+    box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.3);
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#cards {
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: left;
+}

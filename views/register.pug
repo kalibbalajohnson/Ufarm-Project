@@ -1,0 +1,114 @@
+doctype html
+head
+  link(rel='icon' type='image/png' sizes='16x16' href='../favicon/favicon-16x16.png')
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(href='../css/boostrap-5.3/css/bootstrap.css' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous' referrerpolicy='no-referrer')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')
+  link(rel='stylesheet' href='../css/custom.css')
+  title U-Farm
+  style.
+    body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+// Nav starts here
+div(w3-include-html='../includes/navbar.html')
+// Nav ends here
+.container(style='margin-top: 150px')
+  .row
+    .col
+    .col
+      p#alert
+      br
+      .card(style='width: 54rem; box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.4); padding: 30px; background-color: rgb(250, 250, 250); border-radius: 10px;')
+        .card-body
+          h3.card-title(style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode'; ")
+            | Checkout 
+            i.fa-regular.fa-credit-card(style='color: green;')
+          br
+          br
+          h6.card-subtitle.mb-2.text-body-secondary(style='text-align: center;')
+            | Please fill in the form in
+            | order to checkout products
+          br
+          br
+          form#checkout(onsubmit='return Validate6(event);' method='POST' action='/register' name='registration')
+            .row.mb-3
+              label.col-sm-2.col-form-label(for='inputEmail3' style='color: rgb(2, 59, 2);')
+                | Full name
+              .col-sm-10
+                input#fullname.form-control(type='text' name='fullname' placeholder='Please enter your full name ')
+              small#fullnameerr
+            .row.mb-3
+              label.col-sm-2.col-form-label(for='inputPassword3' style='color: rgb(2, 59, 2);')
+                | Contact
+              .col-sm-10
+                input#contact.form-control(type='text' name='phone' placeholder='e.g  0776874310')
+              small#contacterr
+            .row.mb-3
+              label.col-sm-2.col-form-label(for='inputPassword3' style='color:rgb(2, 59, 2);')
+                | Address
+              .col-sm-10
+                input#address.form-control(type='text' name='address' placeholder='Please enter your physical address')
+              small#addresserr
+            .row.mb-3
+              label.col-sm-2.col-form-label(for='inputPassword3' style='color:rgb(2, 59, 2);')
+                | Product
+              .col-sm-10
+                input#product.form-control(type='text' name='product' placeholder='Please enter your physical address')
+              small#producterr
+            .row.mb-3
+              label.col-sm-2.col-form-label(for='inputPassword3' style='color:rgb(2, 59, 2);')
+                | Price
+              .col-sm-10
+                input#price.form-control(type='number' name='price' placeholder='Please enter your physical address')
+              small#priceresserr
+            .row.mb-3
+              label.col-sm-2.col-form-label(for='inputPassword3' style='color:rgb(2, 59, 2);')
+                | Quantity
+              .col-sm-10
+                input#quantity.form-control(type='number' name='quantity' placeholder='Please enter your physical address')
+              small#quantityerr
+            .row.mb-3
+              label.col-sm-2.col-form-label(for='inputPassword3' style='color:rgb(2, 59, 2);')
+                | Shipping
+                | method
+              .col-sm-10
+                .col-md-6
+                  select#shipping.form-select(name='ship')
+                    option(value='pickup') pickup
+                    option(value='delivery') delivery
+              small#shippingerr
+            .row.mb-3
+              label.col-sm-2.col-form-label(for='inputPassword3' style='color: rgb(2, 59, 2);')
+                | Payment
+                | method
+              .col-sm-10
+                .col-md-6
+                  select#pay.form-select(name='pay')
+                    option(value='cash') cash
+                    option(value='mobile') mobile money
+              small#payerr
+            fieldset.row.mb-3
+              legend.col-form-label.col-sm-2.pt-0(style='color:rgb(2, 59, 2);') Gender 
+              .col-sm-10
+                .form-check
+                  input#male.form-check-input(type='radio' name='gender' value='male' checked='')
+                  label.form-check-label(for='gridRadios1')
+                    | Male
+                .form-check
+                  input#female.form-check-input(type='radio' name='gender' value='female')
+                  label.form-check-label(for='gridRadios2')
+                    | Female
+                small#gendererr
+            br
+            br
+            button.btn.btn-success(type='submit' style='margin-left: 250px; width: 240px; height: 45px;') Confirm order
+    .col
+// Nav starts here
+div(w3-include-html='../includes/footer.html')
+// Nav ends here
+script(src='../js/validate.js')
+script(src='../js/custom.js')
+script(src='../css/boostrap-5.3/js/bootstrap.bundle.js')

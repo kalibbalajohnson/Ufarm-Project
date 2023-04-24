@@ -1,0 +1,139 @@
+doctype html
+head
+  link(rel='icon' type='image/png' sizes='16x16' href='favicon/favicon-16x16.png')
+  link(rel='icon' type='image/png' sizes='32x32' href='favicon/favicon-32x32.png')
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(href='css/boostrap-5.3/css/bootstrap.css' rel='stylesheet')
+  link(rel='stylesheet' href='css/custom.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous' referrerpolicy='no-referrer')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')
+  title Ufarm
+// Nav starts here
+div(w3-include-html='includes/navbar.html')
+// Nav ends here
+.container-fluid
+.row
+  // <div class="col"></div>
+  #categories.col-12
+    // slide show start
+    #carouselExampleCaptions.carousel.slide
+      .carousel-indicators
+        button.active(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+        button(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='1' aria-label='Slide 2')
+        button(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='2' aria-label='Slide 3')
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-200(style='height: 502px; width: 1300px;' src='photos/photo5.jpg' alt='...')
+          .carousel-caption.d-none.d-md-block
+            h5 Farm Fresh 
+            p
+              | Our products at Ufarm are got straight from the farm, fresh with all the nutrients and delivered to you
+              | .
+        .carousel-item
+          img.d-block.w-200(style='height: 502px; width: 1300px;' src='photos/photo8.jpg' alt='...')
+          .carousel-caption.d-none.d-md-block
+            h5 The Best Breeds
+            p
+              | At U farm we raise and produce the best breeds that you can find across the market of Uganda and beyond
+              | .
+        .carousel-item
+          img.d-block.w-200(style='height: 502px; width: 1300px;' src='photos/photo12.jpg' alt='...')
+          .carousel-caption.d-none.d-md-block
+            h5 Highest Quality
+            p Quality and quantity is well assured at Ufarm .
+      button.carousel-control-prev(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.visually-hidden Previous
+      button.carousel-control-next(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.visually-hidden Next
+  // slide show end
+  // <div class="col"></div>
+// ------------------------------------------------------------second row-------------------------------------------------------
+br
+a(href='#horticulture')
+  button#button.btn.btn-outline-success(style='margin-left: 50px;' type='button' onclick='show()') All Products
+button#button2.btn.btn-outline-success(type='button' onclick='show1()') Horticulture
+button#button3.btn.btn-outline-success(type='button' onclick='show2()') Poultry
+button#button4.btn.btn-outline-success(type='button' onclick='show3()')
+  | Diary
+  | Products
+br#horticulture
+// ------- start of  horticulture-----
+.bigcard11
+  #bigcard1.card
+    h4.card-header(style='background-color: rgb(62, 143, 62);  text-align: center; font-family:Trebuchet MS, Times, serif;')
+      | Horticulture
+    .card-body
+      .row
+        if horticultureProducts.length
+          each product in horticultureProducts
+            #smallcard.card(style='width: 13rem; mar')
+              img.card-img-top(src=product.productimage, alt='image to be uploaded')
+              .card-body
+                p.card-text
+                  | #{product.productname}
+                  br
+                  | Price: UGX #{product.price}
+                  br
+                  a(href="tel: #{product.phonenumber}" style=' text-decoration: none')
+                    | Contact
+                  a(href='/checkout')
+                    button.btn.btn-success(type='submit') checkout
+       
+// end of horticulture
+br#poultry
+// -------- start of poultry----------
+#bigcard2.card
+  h4.card-header(style='background-color: rgb(62, 143, 62);  text-align: center; font-family:Trebuchet MS, Times, serif;')
+    | Poultry
+  .card-body
+    .row
+         if poultryProducts.length
+          each product in poultryProducts
+            #smallcard.card(style='width: 13rem; mar')
+              img.card-img-top(src=product.productimage, alt='image to be uploaded')
+              .card-body
+                p.card-text
+                  | #{product.productname}
+                  br
+                  | Price: UGX #{product.price}
+                  br
+                  a(href="tel: #{product.phonenumber}" style=' text-decoration: none')
+                    | Contact
+                    br
+                  a(href='/checkout')
+                    button.btn.btn-success(type='submit') checkout
+     
+// ------- end of row for poultry----------
+br#diary
+// ---------------------- start of diary-------------------------
+#bigcard3.card
+  h4.card-header(style='background-color: rgb(62, 143, 62); text-align: center; font-family:Trebuchet MS, Times, serif;')
+    | Diary
+    | Products
+  .card-body
+    .row
+         if diaryProducts.length
+          each product in diaryProducts
+            #smallcard.card(style='width: 13rem; mar')
+              img.card-img-top(src=product.productimage, alt='image to be uploaded')
+              .card-body
+                p.card-text
+                  | #{product.productname}
+                  br
+                  | Price: UGX #{product.price}
+                  br
+                  a(href="tel: #{product.phonenumber}" style=' text-decoration: none')
+                    | Contact
+                    br
+                  a(href='/checkout')
+                    button.btn.btn-success(type='submit') checkout
+
+// end of diary
+// footer starts here
+div(w3-include-html='includes/footer.html')
+// footer ends here
+script(src='css/boostrap-5.3/js/bootstrap.bundle.js')
+script(src='js/custom.js')

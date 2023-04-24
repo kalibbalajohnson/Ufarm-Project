@@ -1,0 +1,141 @@
+doctype html
+head
+  link(rel='icon' type='image/png' sizes='16x16' href='../favicon/favicon-16x16.png')
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(href='../css/boostrap-5.3/css/bootstrap.css' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css' integrity='sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==' crossorigin='anonymous' referrerpolicy='no-referrer')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css')
+  link(rel='stylesheet' href='../css/custom.css')
+  title U-Farm
+// Nav starts here
+div(w3-include-html='../includes/navbar.html')
+// Nav ends here
+.container-fluid(style='margin-top: 150px')
+  .row
+    .col-3
+      .sidebar
+        p
+        h5(style='text-align: center; font-family:Trebuchet MS, Times, serif; color:rgb(0, 255, 106);')
+          | Urban Farmer
+          | Dashboard
+        p
+        hr
+        p
+        a(href='/students' style="text-decoration: none; color:white")
+          h6(style='text-align: center;')
+            | Orders and Bookings 
+            i.fa.fa-shop
+        p
+        hr
+        p
+        a(href='/upload' style="text-decoration: none; color:white")
+          h6(style='text-align: center;')
+            | Upload 
+            i.fas.fa-arrow-alt-circle-up
+        p
+        hr
+        p
+        a(href='/help' style="text-decoration: none; color:white")
+          h6(style='text-align: center;')
+            | Help Center 
+            i.far.fa-comment-dots
+        p
+        hr
+        p
+          form(action='logout' method='post')
+            button(style='margin-left: 90px;' type='submit') Sign out 
+        hr
+        p(style='font-size: 10px; text-align: center; margin-top: 80px;')
+          span(style='font-size: 15px;') Ufarm
+          |             &copy; 2023
+    .col-9
+      div(style='margin-top: -20px; margin-bottom: 160px;')
+        #cards.card(style='width:55rem;  box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.3); text-align: center;  background-color:  rgb(23, 23, 31); border-radius: 14px;')
+          .card-body
+            h4.card-title(style='color: white;') Welcome 
+            h6(style='color: grey;')
+              | Explore the dashboard to find out any new current upadates for you
+              | on the dashboard
+     
+      #signupcard.card(style='background-color: rgb(15, 15, 20);')
+        .up
+          h4(style='margin-left: 200px; color: white') Upload product
+          p(style='margin-left: 70px; color: white') Please fill in the different items in order to upload your product 
+        .card-body
+          form#regForm.row.g-3(style='margin: 30px; color:white' action='/upload' name='upload' method='POST' enctype='multipart/form-data')
+            .col-md-11
+              label.form-label(for='formGroupExampleInput') Name of product
+              input#product.form-control(type='text' name='productname' placeholder='Enter name of product')
+              small#nameErr
+            .col-md-11
+              label.form-label(for='formGroupExampleInput2') Ward
+              input#ward.form-control(type='text' name='ward' placeholder='Enter ward name')
+              small#wardErr
+            .col-md-11
+              label.form-label(for='formGroupExampleInput') Date
+              input#date.form-control(type='date' name='date' placeholder='Example input placeholder')
+              small#dateErr
+            .col-md-11
+              label.form-label(for='formGroupExampleInput') Phone number
+              input#date.form-control(type='text' name='phonenumber' placeholder='Enter your phone contact')
+              small#contactErr
+              br
+            .col-md-6
+              label.form-label(for='formGroupExampleInput2')
+                | Unit Price
+              input#price.form-control(type='number' name='price' placeholder='Enter the unit price in Ugx')
+              small#priceErr
+              br
+            .col-md-6
+              label.form-label(for='formGroupExampleInput2')
+                | Quantity
+              input#quantity.form-control(type='number' name='quantity' placeholder='Enter the Quantity')
+              small#quantityErr
+            .col-md-6
+              label.form-label(for='formGroupExampleInput2')
+                | Product Image
+              input#image.form-control(type='file' name='productimage' placeholder='Upload image here')
+              small#imageErr
+              br
+            .col-md-6
+              label.form-label(for='inputState') Mode of Payment
+              select#pay.form-select(name='pay')
+                option(value='cash') cash
+                option(value='mobilemoney') mobile money
+              small#payErr
+            br
+            .form-floating
+              textarea#dir.form-control(placeholder='Leave a comment here' name='directions' style='height: 100px')
+              label(for='floatingTextarea2' style='color:black') Directions
+              small#dirErr
+            .col-md-5
+              label.form-label(for='inputState') Mode of Delivery
+              select#delivery.form-select(name='delivery')
+                option(value='pickup') pick up
+                option(value='delivery') home delivery
+              small#delErr
+            .col-md-5
+              label.form-label(for='inputState')  Type of Produce
+              select#type.form-select(name='type')
+                option(value='organic') organic
+                option(value='nonorganic') none organic
+              small#typeErr
+            .col-md-5
+              label.form-label(for='inputState')  Category
+              select#type.form-select(name='category')
+                option(value='horticulture') Horticulture
+                option(value='poultry') Poultry
+                option(value='diary') Diary
+              small#catErr
+            br
+            button.btn.btn-success(type='submit' style='width: 200px; margin-left: 300px; margin-top: 40px; margin-bottom: 40px; background-color: rgb(62, 143, 40);') Upload
+            p
+              | If you have any issues, please contact 
+              a(href='mailto:support@ufarm.org') support@ufram.org
+// Nav starts here
+div(w3-include-html='../includes/footer.html')
+// Nav ends here
+script(src='../js/validate.js')
+script(src='../js/custom.js')
+script(src='../css/boostrap-5.3/js/bootstrap.bundle.js')
