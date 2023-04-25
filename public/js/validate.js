@@ -130,7 +130,7 @@ const Validate1 = (event) => {
   let residence = document.getElementById("residence");
   let period = document.getElementById("period");
   let gender = document.getElementById("gender");
-  
+
 
 
 
@@ -189,8 +189,8 @@ const Validate1 = (event) => {
 
 
   // unique number validations
- // const unregex = /^AO-([0-9]{3})+$/;
- // const ufregex = /^UF-([0-9]{3})+$/;
+  // const unregex = /^AO-([0-9]{3})+$/;
+  // const ufregex = /^UF-([0-9]{3})+$/;
   const foregex = /^FO-([0-9]{3})+$/
 
   if (FOid.value == "") {
@@ -423,7 +423,7 @@ const Validate2 = (event) => {
   let nin = document.getElementById("nin");
   let contact = document.getElementById("contact");
   let gender = document.getElementById("gender");
-  
+
 
 
   // pick error sections
@@ -486,8 +486,8 @@ const Validate2 = (event) => {
     idError.textContent = "Unique number is required";
     idError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
-  // } else if (!(uniqueno.value.match(unregex) || uniqueno.value.match(ufregex) || uniqueno.value.match(foregex))) {
-  } else if (!( FOid.value.match(ufregex))) {
+    // } else if (!(uniqueno.value.match(unregex) || uniqueno.value.match(ufregex) || uniqueno.value.match(foregex))) {
+  } else if (!(FOid.value.match(ufregex))) {
     FOid.style.border = "2px solid red"
     idError.textContent = "Unique number must follow this formart UF-000";
     idError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
@@ -679,24 +679,21 @@ const Validate5 = (event) => {
   let userError = document.getElementById("usernameErr");
 
 
-
-
   const ufregex = /^UF-([0-9]{3})+$/;
-  // const foregex = /^FO-([0-9]{3})+$/
   if (username.value == "") {
     username.style.border = "2px solid red"
-    userError.textContent = "Unique number is required";
+    userError.innerHTML = "Unique number is required";
     userError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
-  // } else if (!(uniqueno.value.match(unregex) || uniqueno.value.match(ufregex) || uniqueno.value.match(foregex))) {
+    // } else if (!(uniqueno.value.match(unregex) || uniqueno.value.match(ufregex) || uniqueno.value.match(foregex))) {
   } else if (!(username.value.match(ufregex))) {
     username.style.border = "2px solid red"
-    userError.textContent = "Unique number must follow this formart UF-000";
+    userError.innerHTML = "Unique number must follow this formart UF-000";
     userError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   } else {
-    FOid.style.border = "2px solid green"
-    userError.textContent = "";
+    username.style.border = "2px solid green"
+    userError.innerHTML = "";
   }
 
 
@@ -705,7 +702,7 @@ const Validate5 = (event) => {
     imageError.innerHTML = "Please image can not be empty"
     imageError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
-  
+
   } else {
     image.style.border = "2px solid green"
     imageError.textContent = "";
@@ -737,32 +734,32 @@ const Validate5 = (event) => {
   }
 
 
-// contact validations
-if (contact.value == "") {
-  contact.style.border = "2px solid red"
-  contactError.innerHTML = "Please phone number can not be empty"
-  contactError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-  error++
-}
-// validating last name for minimum length
-else if (contact.value.length < 10) {
-  contact.style.border = "2px solid red"
-  contactError.innerHTML = "Please phone number must be atleast 10 letters"
-  contactError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-  error++
-}
-// validating last name for maximum length
-else if (contact.value.length > 10) {
-  contact.style.border = "2px solid red"
-  contactError.innerHTML = "Please phone number must be a maximum of 10 letters"
-  contactError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-  error++
-} else {
-  contact.style.border = "2px solid green"
-  contactError.textContent = "";
-}
+  // contact validations
+  if (contact.value == "") {
+    contact.style.border = "2px solid red"
+    contactError.innerHTML = "Please phone number can not be empty"
+    contactError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++
+  }
+  // validating last name for minimum length
+  else if (contact.value.length < 10) {
+    contact.style.border = "2px solid red"
+    contactError.innerHTML = "Please phone number must be atleast 10 letters"
+    contactError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++
+  }
+  // validating last name for maximum length
+  else if (contact.value.length > 10) {
+    contact.style.border = "2px solid red"
+    contactError.innerHTML = "Please phone number must be a maximum of 10 letters"
+    contactError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++
+  } else {
+    contact.style.border = "2px solid green"
+    contactError.textContent = "";
+  }
 
-
+  
   // date  validations
   if (date.value == "") {
     date.style.border = "2px solid red"
@@ -922,7 +919,7 @@ const Validate6 = (event) => {
   let error = 0
   // pick inputs
   let fullname = document.getElementById("fullname");
-  // let email = document.getElementById("email")
+  let id = document.getElementById("ID")
   let contact = document.getElementById("contact")
   let address = document.getElementById("address");
   let product = document.getElementById("product");
@@ -937,7 +934,7 @@ const Validate6 = (event) => {
 
   // pick error sections
   let fullnameError = document.getElementById("fullnameerr")
-  // let emailError = document.getElementById("emailerr")
+  let idError = document.getElementById("IDerr")
   let contactError = document.getElementById("contacterr")
   let addressError = document.getElementById("addresserr");
   // let shippingError = document.getElementById("shippingerr");
@@ -949,8 +946,25 @@ const Validate6 = (event) => {
 
 
 
-  
-  // validating first name input emptiness
+  const ufregex = /^UF-([0-9]{3})+$/;
+  if (id.value == "") {
+    id.style.border = "2px solid red"
+    idError.innerHTML = "Unique number is required";
+    idError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++
+    // } else if (!(uniqueno.value.match(unregex) || uniqueno.value.match(ufregex) || uniqueno.value.match(foregex))) {
+  } else if (!(id.value.match(ufregex))) {
+    id.style.border = "2px solid red"
+    idError.innerHTML = "Unique number must follow this formart UF-000";
+    idError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++
+  } else {
+    id.style.border = "2px solid green"
+    idError.innerHTML = "";
+  }
+
+
+  // validating full name input emptiness
   if (fullname.value == "") {
     fullname.style.border = "2px solid red"
     fullnameError.innerHTML = "Please full name can not be empty"
@@ -1051,23 +1065,23 @@ const Validate6 = (event) => {
   }
 
 
-// // email validations
-// const emailregex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-// if (email.value == "") {
-//   email.style.border = "2px solid red";
-//   emailError.textContent = "Email is required";
-//   emailError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-//   error++;
-// } else if (!email.value.match(emailregex)) {
-//   email.style.border = "2px solid red"
-//   emailError.textContent = "Please put in a correct email address";
-//   emailError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-//   error++;
-// } else {
-//   email.style.border = "2px solid green"
-//   emailError.textContent = "";
+  // // email validations
+  // const emailregex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  // if (email.value == "") {
+  //   email.style.border = "2px solid red";
+  //   emailError.textContent = "Email is required";
+  //   emailError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //   error++;
+  // } else if (!email.value.match(emailregex)) {
+  //   email.style.border = "2px solid red"
+  //   emailError.textContent = "Please put in a correct email address";
+  //   emailError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //   error++;
+  // } else {
+  //   email.style.border = "2px solid green"
+  //   emailError.textContent = "";
 
-// }
+  // }
 
   // validating last name input emptiness
   if (contact.value == "") {
@@ -1119,7 +1133,7 @@ const Validate6 = (event) => {
     addressError.textContent = "";
   }
 
-   // pay type validations
+  // pay type validations
   //  if (shipping.value == "") {
   //   shipping.style.border = "2px solid red";
   //   shippingError.textContent = "Please select a shipping method";
@@ -1141,17 +1155,17 @@ const Validate6 = (event) => {
   //   payError.textContent = "";
   // }
 
- // gender validations
- if (male.checked == false && female.checked == false) {
-  // if(!(female.checked && male.checked)){
-  genderError.textContent = "Please select a gender";
-  genderError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-  //   return false;
-  error++
-} else {
-  genderError.textContent = "";
-}
-  
+  // gender validations
+  if (male.checked == false && female.checked == false) {
+    // if(!(female.checked && male.checked)){
+    genderError.textContent = "Please select a gender";
+    genderError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    //   return false;
+    error++
+  } else {
+    genderError.textContent = "";
+  }
+
   if (error > 0) {
     event.preventDefault()
   }
