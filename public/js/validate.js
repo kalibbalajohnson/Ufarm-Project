@@ -198,7 +198,7 @@ const Validate1 = (event) => {
     idError.textContent = "Unique number is required";
     idError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
-  } else if (!(uniqueno.value.match(foregex))) {
+  } else if (!(FOid.value.match(foregex))) {
     FOid.style.border = "2px solid red"
     idError.textContent = "Unique number must follow this formart FO-000";
     idError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
@@ -253,16 +253,16 @@ const Validate1 = (event) => {
     error++
   }
 
-  else if (nin.value.length < 12) {
+  else if (nin.value.length < 13) {
     nin.style.border = "2px solid red"
-    ninError.innerHTML = "Please nin must be atleast 12 characters"
+    ninError.innerHTML = "Please nin must be atleast 13 characters"
     ninError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   }
 
-  else if (nin.value.length > 15) {
+  else if (nin.value.length > 13) {
     nin.style.border = "2px solid red"
-    ninError.innerHTML = "Please period must be less than 15 characters"
+    ninError.innerHTML = "Please period must be less than 14 characters"
     ninError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   } else {
@@ -487,7 +487,7 @@ const Validate2 = (event) => {
     idError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   // } else if (!(uniqueno.value.match(unregex) || uniqueno.value.match(ufregex) || uniqueno.value.match(foregex))) {
-  } else if (!( uniqueno.value.match(ufregex))) {
+  } else if (!( FOid.value.match(ufregex))) {
     FOid.style.border = "2px solid red"
     idError.textContent = "Unique number must follow this formart UF-000";
     idError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
@@ -543,16 +543,16 @@ const Validate2 = (event) => {
     error++
   }
 
-  else if (nin.value.length < 4) {
+  else if (nin.value.length < 13) {
     nin.style.border = "2px solid red"
-    ninError.innerHTML = "Please the nin  must be atleast 10 characters"
+    ninError.innerHTML = "Please the nin  must be atleast 13 characters"
     ninError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   }
 
-  else if (nin.value.length > 20) {
+  else if (nin.value.length > 13) {
     nin.style.border = "2px solid red"
-    ninError.innerHTML = "Please the nin must be less than 20 letters"
+    ninError.innerHTML = "Please the nin must be less than 14 letters"
     ninError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   } else {
@@ -651,6 +651,7 @@ const Validate5 = (event) => {
   let ward = document.getElementById("ward");
   let date = document.getElementById("date");
   let contact = document.getElementById("contact");
+  let username = document.getElementById("username");
   let price = document.getElementById("price");
   let image = document.getElementById("image");
   let quantity = document.getElementById("quantity");
@@ -675,27 +676,59 @@ const Validate5 = (event) => {
   let contactError = document.getElementById("contactErr");
   let imageError = document.getElementById("imageErr");
   let catError = document.getElementById("catErr");
+  let userError = document.getElementById("usernameErr");
 
 
+
+
+  const ufregex = /^UF-([0-9]{3})+$/;
+  // const foregex = /^FO-([0-9]{3})+$/
+  if (username.value == "") {
+    username.style.border = "2px solid red"
+    userError.textContent = "Unique number is required";
+    userError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++
+  // } else if (!(uniqueno.value.match(unregex) || uniqueno.value.match(ufregex) || uniqueno.value.match(foregex))) {
+  } else if (!(username.value.match(ufregex))) {
+    username.style.border = "2px solid red"
+    userError.textContent = "Unique number must follow this formart UF-000";
+    userError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++
+  } else {
+    FOid.style.border = "2px solid green"
+    userError.textContent = "";
+  }
+
+
+  if (image.value == "") {
+    image.style.border = "2px solid red"
+    imageError.innerHTML = "Please image can not be empty"
+    imageError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++
+  
+  } else {
+    image.style.border = "2px solid green"
+    imageError.textContent = "";
+  }
 
   // validating first name input emptiness
   if (product.value == "") {
     product.style.border = "2px solid red"
-    nameError.innerHTML = "Please first name can not be empty"
+    nameError.innerHTML = "Please product name cannot be empty"
     nameError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   }
   // validating first name for minimum length
   else if (product.value.length < 5) {
     product.style.border = "2px solid red"
-    nameError.innerHTML = "Please the first name must be atleast 3 letters"
+    nameError.innerHTML = "Please product name must be atleast 5 letters"
     nameError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   }
   // validating first name for maximum length
-  else if (product.value.length > 20) {
+  else if (product.value.length > 12) {
     product.style.border = "2px solid red"
-    nameError.innerHTML = "Please the first name must be less than 11 letters"
+    nameError.innerHTML = "Please product name must be less than 13 letters"
     nameError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   } else {
@@ -704,35 +737,36 @@ const Validate5 = (event) => {
   }
 
 
-  // validating last name input emptiness
-  if (ward.value == "") {
-    ward.style.border = "2px solid red"
-    wardError.innerHTML = "Please last name can not be empty"
-    wardError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  }
-  // validating last name for minimum length
-  else if (ward.value.length < 4) {
-    ward.style.border = "2px solid red"
-    wardError.innerHTML = "Please period must be atleast 3 letters"
-    wardError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  }
-  // validating last name for maximum length
-  else if (ward.value.length > 20) {
-    ward.style.border = "2px solid red"
-    wardError.innerHTML = "Please period must be less than 11 letters"
-    wardError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  } else {
-    ward.style.border = "2px solid green"
-    wardError.textContent = "";
-  }
+// contact validations
+if (contact.value == "") {
+  contact.style.border = "2px solid red"
+  contactError.innerHTML = "Please phone number can not be empty"
+  contactError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  error++
+}
+// validating last name for minimum length
+else if (contact.value.length < 10) {
+  contact.style.border = "2px solid red"
+  contactError.innerHTML = "Please phone number must be atleast 10 letters"
+  contactError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  error++
+}
+// validating last name for maximum length
+else if (contact.value.length > 10) {
+  contact.style.border = "2px solid red"
+  contactError.innerHTML = "Please phone number must be a maximum of 10 letters"
+  contactError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  error++
+} else {
+  contact.style.border = "2px solid green"
+  contactError.textContent = "";
+}
+
 
   // date  validations
   if (date.value == "") {
     date.style.border = "2px solid red"
-    dateError.innerHTML = "Please last name can not be empty"
+    dateError.innerHTML = "Please date cannot be empty"
     dateError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   }
@@ -757,21 +791,14 @@ const Validate5 = (event) => {
 
   if (price.value == "") {
     price.style.border = "2px solid red"
-    priceError.innerHTML = "Please last name can not be empty"
+    priceError.innerHTML = "Please unit price cannot be empty"
     priceError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   }
 
-  else if (price.value.length < 4) {
+  else if (price.value < 100) {
     price.style.border = "2px solid red"
-    priceError.innerHTML = "Please period must be atleast 3 letters"
-    priceError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  }
-
-  else if (price.value.length > 20) {
-    price.style.border = "2px solid red"
-    priceError.innerHTML = "Please period must be less than 11 letters"
+    priceError.innerHTML = "Please unit price must be atleast ugx 100"
     priceError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   } else {
@@ -782,21 +809,14 @@ const Validate5 = (event) => {
 
   if (quantity.value == "") {
     quantity.style.border = "2px solid red"
-    quantityError.innerHTML = "Please last name can not be empty"
+    quantityError.innerHTML = "Please quantity cannot be empty"
     quantityError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   }
 
-  else if (quantity.value.length < 4) {
+  else if (quantity.value < 1) {
     quantity.style.border = "2px solid red"
-    quantityError.innerHTML = "Please period must be atleast 3 letters"
-    quantityError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  }
-
-  else if (quantity.value.length > 20) {
-    quantity.style.border = "2px solid red"
-    quantityError.innerHTML = "Please period must be less than 11 letters"
+    quantityError.innerHTML = "Please  quantity must be more than 1"
     quantityError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   } else {
@@ -815,24 +835,53 @@ const Validate5 = (event) => {
     payError.textContent = "";
   }
 
+  if (ward.value == "") {
+    ward.style.border = "2px solid red";
+    wardError.textContent = "Please select a payment mode";
+    wardError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++
+  } else {
+    ward.style.border = "2px solid green"
+    wardError.textContent = "";
+  }
+  if (pay.value == "") {
+    pay.style.border = "2px solid red";
+    payError.textContent = "Please select a payment mode";
+    payError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++
+  } else {
+    pay.style.border = "2px solid green"
+    payError.textContent = "";
+  }
+
+  if (cat.value == "") {
+    cat.style.border = "2px solid red";
+    catError.textContent = "Please select a payment mode";
+    catError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++
+  } else {
+    cat.style.border = "2px solid green"
+    catError.textContent = "";
+  }
+
   // validating directions input emptiness
   if (dir.value == "") {
     dir.style.border = "2px solid red"
-    dirError.innerHTML = "Please first name can not be empty"
+    dirError.innerHTML = "Please directions cannot be empty"
     dirError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   }
   // validating directions for minimum length
   else if (dir.value.length < 5) {
     dir.style.border = "2px solid red"
-    dirError.innerHTML = "Please the first name must be atleast 3 letters"
+    dirError.innerHTML = "Please directions must be atleast 5 letters"
     dirError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   }
   // validating directions for maximum length
   else if (dir.value.length > 50) {
     dir.style.border = "2px solid red"
-    dirError.innerHTML = "Please the first name must be less than 11 letters"
+    dirError.innerHTML = "Please directions must be less than 11 letters"
     dirError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
     error++
   } else {

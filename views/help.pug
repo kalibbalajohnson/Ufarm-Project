@@ -15,16 +15,15 @@ head
 // Nav starts here
 div(w3-include-html='../includes/navbar.html')
 // Nav ends here
-.container-fluid(style='margin-top: 150px;')
+.container-fluid(style='margin-top: 150px; color:black')
   .row
-    .col-9(style='padding-left: 30px;')
+    .col-9(style='padding-left: 30px; margin-top:-25px')
       h4(style='text-align: center; margin-bottom: 20px; color: rgb(4, 83, 4); font-family: Times New Roman; font-size: 30px;')
         | Help Center 
-        i.far.fa-comment-dots
+        //- i.far.fa-comment-dots
       p
         | Welcome to the Ufarm Help Center. Here, you&apos;ll find answers to frequently asked
         | questions, as well as resources to help you get the most out of our platform.
-      p
         | If you&apos;re a farmer, our help center provides guidance on how to list your products, manage your
         | orders, and connect with buyers. We also offer tips and best practices for sustainable farming
         | practices and how to promote your products effectively.
@@ -42,11 +41,13 @@ div(w3-include-html='../includes/navbar.html')
         | At Ufarm, we&apos;re committed to providing excellent customer support and helping you get
         | the most out of our platform. If you can&apos;t find what you&apos;re looking for in our help center, please
         | don&apos;t hesitate to contact us directly. Our friendly and knowledgeable team is always here to help.
-        | Contact: (+256 7856872056 or +256 756732188)
+        | Contact: 
+        a(href="tel: 0756870202" )
+         |+256 7856872056 
     .col-3
       // <h4>Dashboard <i class="fa fa-line-chart" style="font-size:24px"></i></h4>
       // <br>
-      .sidebar(style='background-color: white; color: black; height:570px; box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.3);  position:absolute;')
+      .sidebar(style='background-color: white; color: black; height:500px; box-shadow: 0px 6px 14px 0px rgba(0, 0, 0, 0.3);  position:absolute;')
         p
         h5(style='text-align: center; color: green;')  FAQs 
         p
@@ -86,12 +87,7 @@ div(w3-include-html='../includes/navbar.html')
               .accordion-body
                 | You can return the product before a week after recieving
                 | the product.
-          .accordion-item
-            h2#flush-headingThree.accordion-header
-              button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#flush-collapseThree' aria-expanded='false' aria-controls='flush-collapseThree')
-                | Can I cancel or modify my order after I&apos;ve placed it?
-            #flush-collapseThree.accordion-collapse.collapse(aria-labelledby='flush-headingThree' data-bs-parent='#accordionFlushExample')
-              .accordion-body Yes, that is possible.
+  
 // Nav starts here
 div(w3-include-html='../includes/footer.html')
 // Nav ends here

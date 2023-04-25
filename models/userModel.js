@@ -19,21 +19,12 @@ const userSchema = new mongoose.Schema({
         unique:true
     },
 
-    dob: {
-        type: String,
-        trim: true
-    },
-
     email: {
         type: String,
         trim: true,
         unique:true
     },
 
-    phonenumber: {
-        type: String,
-        trim: true,
-    },
     role: {
         type: String,
         trim: true

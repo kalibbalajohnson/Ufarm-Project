@@ -24,14 +24,14 @@ div(w3-include-html='../includes/navbar.html')
          a(href='/aodash' style="text-decoration: none; color:white")
           h6(style='text-align: center;')
             | Appointed FO 
-            i.fas.fa-user-friends
+            i.fa-solid.fa-user
         p
         hr
         p
         a(href='/foinfo' style='text-decoration: none; color:white')
           h6(style='text-align: center;')
             |  Registered FO 
-            i.fas.fa-arrow-alt-circle-up
+            i.fas.fa-user-friends
         p
         hr
         p
@@ -67,7 +67,7 @@ div(w3-include-html='../includes/navbar.html')
             h5.card-title(style='color: white;') Urban Farmers
             h6(style='font-size: 18px; color: white; ') #{activeFarmers}
             p(style='color: grey;') The number of urban farmers.
-      h6(style='text-align: center; font-size: 20px;') Farmer One Table
+      h4(style='text-align: center;') Farmer One Table
       table.table.table-striped.table-dark(style='margin-bottom: 100px; margin-top: 25px;')
         thead
           tr
@@ -76,7 +76,6 @@ div(w3-include-html='../includes/navbar.html')
             th(scope='col') Ward
             th(scope='col') Email
             th(scope='col') Address
-            th(scope='col') Date of Birth
             th(scope='col') Status
         tbody
         if FarmerOnes.length 
@@ -87,7 +86,6 @@ div(w3-include-html='../includes/navbar.html')
                   td #{urbanFarmer.ward}
                   td #{urbanFarmer.email}
                   td #{urbanFarmer.address}
-                  td #{urbanFarmer.dob}
                   td
                     button.btn.btn-success(type='submit') Appointed
         else 

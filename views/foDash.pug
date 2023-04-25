@@ -23,15 +23,15 @@ div(w3-include-html='../includes/navbar.html')
         p
         a(href='/fodash' style="text-decoration: none; color:white")
           h6(style='text-align: center;')
-            | Orders and Bookings
+            | Orders and Bookings       
             i.fa.fa-shop
         p
         hr
         p
         a(href='/ufinfo' style="text-decoration: none; color:white")
           h6(style='text-align: center;')
-            | Registered UF 
-            i.fas.fa-arrow-alt-circle-up
+            | Registered UF   
+            i.fas.fa-user-friends
         p
         hr
         p
@@ -69,39 +69,8 @@ div(w3-include-html='../includes/navbar.html')
               br
               |
               span(style='color: white') Total Income: UGX #{total.totalFees} 
-      //h5(style='text-align: center; ') Urban Farmers
-      //- table.table.table-striped.table-dark(style='margin-bottom: 100px; margin-top: 29px;')
-      //-   thead
-      //-     tr
-      //-       th(scope='col') Full Name
-      //-       //- th(scope='col') Lastname
-      //-       th(scope='col') Unique ID
-      //-       th(scope='col') Dob
-      //-       th(scope='col') Gender
-      //-       th(scope='col') Email 
-      //-       th(scope='col') Address
-      //-   tbody
-      //-   if urbanFarmers.length 
-      //-       each urbanFarmer in urbanFarmers
-      //-           tr
-      //-               td #{urbanFarmer.firstname} #{urbanFarmer.lastname}
-      //-               td #{urbanFarmer.username}
-      //-               td #{urbanFarmer.dob}
-      //-               td #{urbanFarmer.gender}
-      //-               td #{urbanFarmer.email}
-      //-               td #{urbanFarmer.address}
-      //-               td 
-      //-                   //-     form(method='post', action='/students/delete')
-      //-                   //-         input(type='hidden', name="id", value=student._id)
-      //-                   //-         button.btn.btn-danger(type='submit') Delete
-
-      //-                   //- td        
-      //-                   //-     a.btn.btn-dark.btn-block(href='/edit_student/'+student._id) Edit
-      //-   else 
-      //-       p 
-      //-         h4 There are no Urban Farmers registered yet
-
-      h5(style='text-align: center;;') Orders and Bookings
+              
+      h4(style='text-align: center;;') Orders and Bookings
       table.table.table-striped.table-dark(style='margin-bottom: 100px; margin-top: 29px;')
         thead
           tr
