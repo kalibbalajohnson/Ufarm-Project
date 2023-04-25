@@ -26,8 +26,13 @@ const productsSchema = new mongoose.Schema({
         trim:true
        
     },
+    username: {
+        type: String,
+        trim:true
+       
+    },
     quantity: {
-        type: Number,
+        type: String,
         trim:true
        
     },

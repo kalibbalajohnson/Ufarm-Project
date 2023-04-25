@@ -105,7 +105,6 @@ div(w3-include-html='../includes/navbar.html')
             th(scope='col') Home Directions
             th(scope='col') Period
             th(scope='col') Action
-            th(scope='col') Action
         tbody
         if farmerones.length
             each farmerone in farmerones
@@ -119,10 +118,6 @@ div(w3-include-html='../includes/navbar.html')
                     td #{farmerone.nin}
                     td #{farmerone.directions}
                     td #{farmerone.period}
-                    td 
-                      form(action="/foinfo/delete" method='post') 
-                        input(type="hidden" name='id' value= farmerone.id)
-                        button.btn.btn-danger(type='submit') Delete  
                     td 
                       a.btn.btn-dark.btn-block(href="/edit_fo/"+farmerone.id) Edit       
                     

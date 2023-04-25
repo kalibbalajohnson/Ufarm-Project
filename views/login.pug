@@ -22,11 +22,11 @@ head
       #logincard.opacity-100
         h1(style='text-align: center; color:white;') Login
         .card-body
-          form#regForm.floating-form(action='/login' name='login' onsubmit='return Validate();' method='POST')
+          form#regForm.floating-form(action='/login' name='login'  method='POST')
             fieldset
               .form-floating.mb-3
                 input#floatingInput.form-control(type='text' name='username' placeholder='name@example.com')
-                small#mailErr
+                small#userErr
                 label(for='floatingInput') Unique ID
               .form-floating.mb-3
                 input#floatingPassword.form-control(type='password' name='password' placeholder='Password')

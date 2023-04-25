@@ -112,7 +112,7 @@ router.get("/foDash", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
                 //'$group': {category: '$parents', 
                 '$group': {
                     _id: '$all',
-                    totalFees: { $sum: '$fees' }
+                    totalFees: { $sum: '$price' }
                     // averageFees: { $avg: '$fees' }
                 }
             }

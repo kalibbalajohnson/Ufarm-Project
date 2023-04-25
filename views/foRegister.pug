@@ -53,7 +53,7 @@ head
               .col-md-11
                 label.form-label(for='formGroupExampleInput')
                   h6 Period of stay (years) 
-                input#name.form-control(type='number' name='period' placeholder='Enter period of stay')
+                input#period.form-control(type='number' name='period' placeholder='Enter period of stay')
                 small#periodErr
                 br
               .col-md-11
@@ -65,7 +65,7 @@ head
               .col-md-11
                 label.form-label(for='exampleFormControlTextarea1')
                   h6  Home Directions 
-                textarea#activities.form-control(rows='3' name='directions' placeholder='Activities undertaken')
+                textarea#directions.form-control(rows='3' name='directions' placeholder='Activities undertaken')
                 small#dirErr
                 br
               .col-md-11
@@ -84,13 +84,13 @@ head
                 h6 Gender 
               select#gender.form-control(name='gender')
                 option(value='Default' selected='') Select
-                option(value='permanent')  Male
-                option(value='temporary')  Female
+                option(value='male')  Male
+                option(value='male')  Female
               small#genderErr
             .col-md-8
               label.form-label(for='inlineFormSelectPref')
                 h6 Residence Type 
-              select#gender.form-control(name='residence')
+              select#residence.form-control(name='residence')
                 option(value='Default' selected='') Select
                 option(value='permanent')  Permanent
                 option(value='temporary')  Temporary
@@ -109,7 +109,7 @@ head
             .col-12
               button.btn.btn-success(type='submit' style='margin-left: 200px; width: 120px;') Register
             hr
-            h6(style='color: black;')
+            h6(style='color:white;')
               | Click 
               a(href='/home') here
               |  to return to home page

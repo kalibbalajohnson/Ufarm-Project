@@ -35,6 +35,13 @@ div(w3-include-html='../includes/navbar.html')
         p
         hr
         p
+        a(href='/uploadinfo' style='text-decoration: none; color:white')
+          h6(style='text-align: center;')
+            |  Uploads 
+            i.fas.fa-arrow-alt-circle-up
+        p
+        hr
+        p
         a(href='/help' style="text-decoration: none; color:white")
           h6(style='text-align: center;')
             | Help Center 
@@ -56,9 +63,12 @@ div(w3-include-html='../includes/navbar.html')
           .card-body
             h4.card-title(style='color: white;') Welcome
             h6(style='color: grey;')
-              | Explore the dashboard to find out any new current updates for you
+              | Explore the dashboard to find out the new orders and bookings
               | on the dashboard 
               br
+              br
+              |
+              span(style='color: white') Total Income: UGX #{total.totalFees} 
       //h5(style='text-align: center; ') Urban Farmers
       //- table.table.table-striped.table-dark(style='margin-bottom: 100px; margin-top: 29px;')
       //-   thead
@@ -95,16 +105,14 @@ div(w3-include-html='../includes/navbar.html')
       table.table.table-striped.table-dark(style='margin-bottom: 100px; margin-top: 29px;')
         thead
           tr
-            th(scope='col') Full name
-            th(scope='col') Phone
+            th(scope='col') Name
+            th(scope='col') Contact
             th(scope='col') Address
             th(scope='col') Product
-            th(scope='col') Price
+            th(scope='col') unit Price
             th(scope='col') Quantity
-            th(scope='col') Ship
-            th(scope='col') Payment
+            th(scope='col') Merchant ID
             th(scope='col') Gender
-            th(scope='col') Action
         tbody
         if students.length
             each student in students 
@@ -115,13 +123,12 @@ div(w3-include-html='../includes/navbar.html')
                     td #{student.product}
                     td #{student.price}
                     td #{student.quantity}
-                    td #{student.ship}
-                    td #{student.pay}
+                    td #{student.ID}
                     td #{student.gender}
-                    td 
-                      form(action="/foDash/delete" method='post') 
-                        input(type="hidden" name='id' value= student.id)
-                        button.btn.btn-danger(type='submit') Delete  
+                    //- td 
+                    //-   form(action="/foDash/delete" method='post') 
+                    //-     input(type="hidden" name='id' value= student.id)
+                    //-     button.btn.btn-danger(type='submit') Delete  
                     
         else
             p there are no students in the database

@@ -38,58 +38,44 @@ div(w3-include-html='../includes/navbar.html')
               label.col-sm-2.col-form-label(for='inputEmail3' style='color: rgb(2, 59, 2);')
                 | Full name
               .col-sm-10
-                input#fullname.form-control(type='text' name='fullname' placeholder='Please enter your full name ')
+                input#fullname.form-control(type='text' name='fullname' placeholder='Please enter your full name here')
               small#fullnameerr
-            .row.mb-3
+               .row.mb-3
+              label.col-sm-2.col-form-label(for='inputPassword3' style='color:rgb(2, 59, 2);')
+                | Product
+              .col-sm-10
+                input#product.form-control(type='text' name='product' placeholder='Please enter selected product here')
+              small#producterr
+               .row.mb-3
+              label.col-sm-2.col-form-label(for='inputPassword3' style='color:rgb(2, 59, 2);')
+                | Merchant ID
+              .col-sm-10
+                input#ID.form-control(type='text' name='ID' placeholder='Please enter the merchant ID here')
+              small#IDerr
+              .row.mb-3
               label.col-sm-2.col-form-label(for='inputPassword3' style='color: rgb(2, 59, 2);')
                 | Contact
               .col-sm-10
-                input#contact.form-control(type='text' name='phone' placeholder='e.g  0776874310')
+                input#contact.form-control(type='text' name='phone' placeholder='Enter your contact here')
               small#contacterr
             .row.mb-3
               label.col-sm-2.col-form-label(for='inputPassword3' style='color:rgb(2, 59, 2);')
                 | Address
               .col-sm-10
-                input#address.form-control(type='text' name='address' placeholder='Please enter your physical address')
+                input#address.form-control(type='text' name='address' placeholder='Please enter your address here')
               small#addresserr
             .row.mb-3
               label.col-sm-2.col-form-label(for='inputPassword3' style='color:rgb(2, 59, 2);')
-                | Product
+                | Unit Price
               .col-sm-10
-                input#product.form-control(type='text' name='product' placeholder='Please enter your physical address')
-              small#producterr
-            .row.mb-3
-              label.col-sm-2.col-form-label(for='inputPassword3' style='color:rgb(2, 59, 2);')
-                | Price
-              .col-sm-10
-                input#price.form-control(type='number' name='price' placeholder='Please enter your physical address')
-              small#priceresserr
+                input#price.form-control(type='number' name='price' placeholder='Please enter the unit price here')
+              small#priceerr
             .row.mb-3
               label.col-sm-2.col-form-label(for='inputPassword3' style='color:rgb(2, 59, 2);')
                 | Quantity
               .col-sm-10
-                input#quantity.form-control(type='number' name='quantity' placeholder='Please enter your physical address')
+                input#quantity.form-control(type='number' name='quantity' placeholder='Please enter the quantity here')
               small#quantityerr
-            .row.mb-3
-              label.col-sm-2.col-form-label(for='inputPassword3' style='color:rgb(2, 59, 2);')
-                | Shipping
-                | method
-              .col-sm-10
-                .col-md-6
-                  select#shipping.form-select(name='ship')
-                    option(value='pickup') pickup
-                    option(value='delivery') delivery
-              small#shippingerr
-            .row.mb-3
-              label.col-sm-2.col-form-label(for='inputPassword3' style='color: rgb(2, 59, 2);')
-                | Payment
-                | method
-              .col-sm-10
-                .col-md-6
-                  select#pay.form-select(name='pay')
-                    option(value='cash') cash
-                    option(value='mobile') mobile money
-              small#payerr
             fieldset.row.mb-3
               legend.col-form-label.col-sm-2.pt-0(style='color:rgb(2, 59, 2);') Gender 
               .col-sm-10

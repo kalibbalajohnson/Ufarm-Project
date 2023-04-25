@@ -36,13 +36,6 @@ div(w3-include-html='../includes/navbar.html')
         p
         hr
         p
-        a(href='/uploadinfo2' style="text-decoration: none; color:white")
-          h6(style='text-align: center;')
-            | Update Uploads 
-            i.fas.fa-arrow-alt-circle-up
-        p
-        hr
-        p
         a(href='/help' style="text-decoration: none; color:white")
           h6(style='text-align: center;')
             | Help Center 
@@ -62,80 +55,81 @@ div(w3-include-html='../includes/navbar.html')
           .card-body
             h4.card-title(style='color: white;') Welcome 
             h6(style='color: grey;')
-              | Please fill in the form below in order for you to upload your products on the website
+              | Explore the dashboard to find out any new current upadates for you
+              | on the dashboard
      
       #signupcard.card(style='background-color: rgb(15, 15, 20);')
         .up
-          h4(style='margin-left: 240px; color: white') Upload product
-          br
+          h4(style='margin-left: 200px; color: white') Upload product
+          p(style='margin-left: 70px; color: white') Please fill in the different items in order to upload your product 
         .card-body
-          form#regForm.row.g-3(style='margin: 30px; color:white' action='/upload' onsubmit='return Validate5(event);' name='upload' method='POST' enctype='multipart/form-data')
+          form#regForm.row.g-3(style='margin: 30px; color:white' action='/edit_upload?id='+upload._id  name='editupload' method='POST')
             .col-md-6
               label.form-label(for='formGroupExampleInput') Name of product
-              input#product.form-control(type='text' name='productname' placeholder='Enter name of product')
+              input#product.form-control(type='text' name='productname' placeholder='Enter name of product' value=upload.productname disabled)
               small#nameErr
             .col-md-6
               label.form-label(for='formGroupExampleInput') Unique ID
-              input#username.form-control(type='text' name='username' placeholder='Enter your unique ID')
+              input#username.form-control(type='text' name='username' placeholder='Enter your unique ID' value=upload.username disabled)
               small#usernameErr
             .col-md-6
               label.form-label(for='formGroupExampleInput2') Ward
-              input#ward.form-control(type='text' name='ward' placeholder='Enter ward name')
+              input#ward.form-control(type='text' name='ward' placeholder='Enter ward name' value=upload.ward disabled)
               small#wardErr
             .col-md-6
               label.form-label(for='formGroupExampleInput') Date of upload
-              input#date.form-control(type='date' name='date' placeholder='Example input placeholder')
+              input#date.form-control(type='date' name='date' placeholder='Example input placeholder' value=upload.date disabled)
               small#dateErr
             .col-md-6
               label.form-label(for='formGroupExampleInput') Phone number
-              input#contact.form-control(type='text' name='phonenumber' placeholder='Enter your phone contact')
+              input#contact.form-control(type='text' name='phonenumber' placeholder='Enter your phone contact' value=upload.phonenumber disabled)
               small#contactErr
             .col-md-6
               label.form-label(for='formGroupExampleInput2')
                 | Unit Price
-              input#price.form-control(type='number' name='price' placeholder='Enter the unit price in Ugx')
+              input#price.form-control(type='number' name='price' placeholder='Enter the unit price in Ugx' value=upload.price disabled)
               small#priceErr
             .col-md-6
               label.form-label(for='formGroupExampleInput2')
                 | Quantity
-              input#quantity.form-control(type='number' name='quantity' placeholder='Enter the Quantity')
+              input#quantity.form-control(type='text' name='quantity' placeholder='Enter the Quantity' value=upload.quantity )
               small#quantityErr
             .col-md-6
               label.form-label(for='formGroupExampleInput2')
                 | Product Image
-              input#image.form-control(type='file' name='productimage' placeholder='Upload image here')
+              input#image.form-control(type='file' name='productimage' placeholder='Upload image here' value=upload.productimage disabled)
               small#imageErr
               br
             .col-md-6
               label.form-label(for='inputState') Mode of Payment
-              select#pay.form-select(name='pay')
+              select#pay.form-select(name='pay' value=upload.pay disabled)
                 option(value='cash') cash
                 option(value='mobilemoney') mobile money
               small#payErr
             br
             .col-md-6
               label.form-label(for='inputState') Mode of Delivery
-              select#delivery.form-select(name='delivery')
+              select#delivery.form-select(name='delivery' value=upload.delivery disabled)
                 option(value='pickup') pick up
                 option(value='delivery') home delivery
               small#delErr
               br
             .col-md-6
               label.form-label(for='inputState')  Type of Produce
-              select#type.form-select(name='type')
+              select#type.form-select(name='type' value=upload.type disabled)
                 option(value='organic') organic
                 option(value='nonorganic') none organic
               small#typeErr
             .col-md-6
               label.form-label(for='inputState')  Category
-              select#cat.form-select(name='category')
+              select#cat.form-select(name='category' value=upload.category disabled)
                 option(value='horticulture') Horticulture
                 option(value='poultry') Poultry
                 option(value='diary') Diary
               small#catErr
               br
             .form-floating
-              textarea#dir.form-control(placeholder='Leave a comment here' name='directions' style='height: 100px')
+              textarea#dir.form-control(placeholder='Leave a comment here' name='directions' style='height: 100px' value=upload.directions disabled)
               label(for='floatingTextarea2' style='color:black') Directions
               small#dirErr  
             br

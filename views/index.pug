@@ -69,18 +69,44 @@ br#horticulture
       .row
         if horticultureProducts.length
           each product in horticultureProducts
-            #smallcard.card(style='width: 13rem; mar')
+            #smallcard.card(style='width: 16rem; mar')
               img.card-img-top(src=product.productimage, alt='image to be uploaded')
               .card-body
                 p.card-text
-                  | #{product.productname}
+                span(style='color: black')
+                  | Product:   
+                  span(style='color:green') #{product.productname}
                   br
-                  | Price: UGX #{product.price}
+                span(style='color: black')
+                  | Unit Price:  
+                  span(style='color:green') Ugx #{product.price}
                   br
-                  a(href="tel: #{product.phonenumber}" style=' text-decoration: none')
-                    | Contact
-                  a(href='/checkout')
+                span(style='color: black')
+                  | Quantity: 
+                  span(style='color:green') #{product.quantity}
+                  br
+                span(style='color: black')
+                  | Type:       
+                  span(style='color:green') #{product.type}
+                  br
+                span(style='color: black')
+                  | Merchant ID:              
+                  span(style='color:green') #{product.ID}
+                  br
+                span(style='color: black')
+                  | Payment:              
+                  span(style='color:green') #{product.pay}
+                  br  
+                span(style='color: black')
+                  | Delivery mode:              
+                  span(style='color:green') #{product.delivery}
+                  br  
+                  br
+                  a(href='/register')
                     button.btn.btn-success(type='submit') checkout
+                  a(href="tel: #{product.phonenumber}" style=' text-decoration: none; margin-left:28px')
+                    | Call
+                    br  
        
 // end of horticulture
 br#poultry
@@ -92,19 +118,44 @@ br#poultry
     .row
          if poultryProducts.length
           each product in poultryProducts
-            #smallcard.card(style='width: 13rem; mar')
+            #smallcard.card(style='width: 16rem; mar')
               img.card-img-top(src=product.productimage, alt='image to be uploaded')
               .card-body
                 p.card-text
-                  | #{product.productname}
+                span(style='color: black')
+                  | Product:   
+                  span(style='color:green') #{product.productname}
                   br
-                  | Price: UGX #{product.price}
+                span(style='color: black')
+                  | Unit Price:  
+                  span(style='color:green') Ugx #{product.price}
                   br
-                  a(href="tel: #{product.phonenumber}" style=' text-decoration: none')
-                    | Contact
-                    br
-                  a(href='/checkout')
+                span(style='color: black')
+                  | Quantity: 
+                  span(style='color:green') #{product.quantity}
+                  br
+                span(style='color: black')
+                  | Type:       
+                  span(style='color:green') #{product.type}
+                  br
+                span(style='color: black')
+                  | Merchant ID:              
+                  span(style='color:green') #{product.ID}
+                  br
+                span(style='color: black')
+                  | Payment:              
+                  span(style='color:green') #{product.pay}
+                  br  
+                span(style='color: black')
+                  | Delivery mode:              
+                  span(style='color:green') #{product.delivery}
+                  br  
+                  br
+                  a(href='/register')
                     button.btn.btn-success(type='submit') checkout
+                  a(href="tel: #{product.phonenumber}" style=' text-decoration: none; margin-left:28px')
+                    | Call
+                    br  
      
 // ------- end of row for poultry----------
 br#diary
@@ -117,19 +168,44 @@ br#diary
     .row
          if diaryProducts.length
           each product in diaryProducts
-            #smallcard.card(style='width: 13rem; mar')
+            #smallcard.card(style='width: 16rem; mar')
               img.card-img-top(src=product.productimage, alt='image to be uploaded')
               .card-body
                 p.card-text
-                  | #{product.productname}
+                span(style='color: black')
+                  | Product:   
+                  span(style='color:green') #{product.productname}
                   br
-                  | Price: UGX #{product.price}
+                span(style='color: black')
+                  | Unit Price:  
+                  span(style='color:green') Ugx #{product.price}
                   br
-                  a(href="tel: #{product.phonenumber}" style=' text-decoration: none')
-                    | Contact
-                    br
-                  a(href='/checkout')
+                span(style='color: black')
+                  | Quantity: 
+                  span(style='color:green') #{product.quantity}
+                  br
+                span(style='color: black')
+                  | Type:       
+                  span(style='color:green') #{product.type}
+                  br
+                span(style='color: black')
+                  | Merchant ID:              
+                  span(style='color:green') #{product.ID}
+                  br
+                span(style='color: black')
+                  | Payment:              
+                  span(style='color:green') #{product.pay}
+                  br  
+                span(style='color: black')
+                  | Delivery mode:              
+                  span(style='color:green') #{product.delivery}
+                  br  
+                  br
+                  a(href='/register')
                     button.btn.btn-success(type='submit') checkout
+                  a(href="tel: #{product.phonenumber}" style=' text-decoration: none; margin-left:28px')
+                    | Call
+                    br  
 
 // end of diary
 // footer starts here
