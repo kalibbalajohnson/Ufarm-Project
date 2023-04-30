@@ -22,7 +22,7 @@ head
       #logincard.opacity-100
         h1(style='text-align: center; color:white;') Login
         .card-body
-          form#regForm.floating-form(action='/login' name='login'  method='POST')
+          form#regForm.floating-form(action='/login' name='login' onsubmit='return Validate4();' method='POST')
             fieldset
               .form-floating.mb-3
                 input#floatingInput.form-control(type='text' name='username' placeholder='name@example.com')

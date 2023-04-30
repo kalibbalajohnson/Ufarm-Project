@@ -305,19 +305,20 @@ const Validate1 = (event) => {
     error++
   }
 
-  else if (DOB.value.length < 8) {
-    DOB.style.border = "2px solid red"
-    dobError.innerHTML = "Please date of birth must be atleast 8 characters"
-    dobError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  }
+  // else if (DOB.value.length < 8) {
+  //   DOB.style.border = "2px solid red"
+  //   dobError.innerHTML = "Please date of birth must be atleast 8 characters"
+  //   dobError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //   error++
+  // }
 
-  else if (DOB.value.length > 8) {
-    DOB.style.border = "2px solid red"
-    dobError.innerHTML = "Please date of birth must be less than 9 characters"
-    dobError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  } else {
+  // else if (DOB.value.length > 8) {
+  //   DOB.style.border = "2px solid red"
+  //   dobError.innerHTML = "Please date of birth must be less than 9 characters"
+  //   dobError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //   error++
+  // } 
+  else {
     DOB.style.border = "2px solid green"
     dobError.textContent = "";
   }
@@ -331,19 +332,20 @@ const Validate1 = (event) => {
     error++
   }
 
-  else if (DOR.value.length < 4) {
-    DOR.style.border = "2px solid red"
-    dorError.innerHTML = "Please date of registration must be atleast 8 characters"
-    dorError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  }
+  // else if (DOR.value.length < 4) {
+  //   DOR.style.border = "2px solid red"
+  //   dorError.innerHTML = "Please date of registration must be atleast 8 characters"
+  //   dorError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //   error++
+  // }
 
-  else if (DOR.value.length > 20) {
-    DOR.style.border = "2px solid red"
-    dorError.innerHTML = "Please date of registration must be less than 9 characters"
-    dorError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  } else {
+  // else if (DOR.value.length > 20) {
+  //   DOR.style.border = "2px solid red"
+  //   dorError.innerHTML = "Please date of registration must be less than 9 characters"
+  //   dorError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //   error++
+  // }
+  else {
     DOR.style.border = "2px solid green"
     dorError.textContent = "";
   }
@@ -595,19 +597,20 @@ const Validate2 = (event) => {
     error++
   }
 
-  else if (DOB.value.length < 8) {
-    DOB.style.border = "2px solid red"
-    dobError.innerHTML = "Please the date of birth must be atleast 8 letters"
-    dobError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  }
+  // else if (DOB.value.length < 8) {
+  //   DOB.style.border = "2px solid red"
+  //   dobError.innerHTML = "Please the date of birth must be atleast 8 letters"
+  //   dobError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //   error++
+  // }
 
-  else if (DOB.value.length > 8) {
-    DOB.style.border = "2px solid red"
-    dobError.innerHTML = "Please the date of birth must be less than 9 letters"
-    dobError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  } else {
+  // else if (DOB.value.length > 8) {
+  //   DOB.style.border = "2px solid red"
+  //   dobError.innerHTML = "Please the date of birth must be less than 9 letters"
+  //   dobError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //   error++
+  // } 
+  else {
     DOB.style.border = "2px solid green"
     dobError.textContent = "";
   }
@@ -621,19 +624,20 @@ const Validate2 = (event) => {
     error++
   }
 
-  else if (DOR.value.length < 8) {
-    DOR.style.border = "2px solid red"
-    dorError.innerHTML = "Please the date of registration must be atleast 3 letters"
-    dorError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  }
+  // else if (DOR.value.length < 8) {
+  //   DOR.style.border = "2px solid red"
+  //   dorError.innerHTML = "Please the date of registration must be atleast 3 letters"
+  //   dorError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //   error++
+  // }
 
-  else if (DOR.value.length > 8) {
-    DOR.style.border = "2px solid red"
-    dorError.innerHTML = "Please the date of registration must be less than 9 letters"
-    dorError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  } else {
+  // else if (DOR.value.length > 8) {
+  //   DOR.style.border = "2px solid red"
+  //   dorError.innerHTML = "Please the date of registration must be less than 9 letters"
+  //   dorError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //   error++
+  // }
+   else {
     DOR.style.border = "2px solid green"
     dorError.textContent = "";
   }
@@ -768,19 +772,20 @@ const Validate5 = (event) => {
     error++
   }
 
-  else if (date.value.length < 4) {
-    date.style.border = "2px solid red"
-    dateError.innerHTML = "Please period must be atleast 3 letters"
-    dateError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  }
+  // else if (date.value.length < 4) {
+  //   date.style.border = "2px solid red"
+  //   dateError.innerHTML = "Please period must be atleast 3 letters"
+  //   dateError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //   error++
+  // }
 
-  else if (date.value.length > 20) {
-    date.style.border = "2px solid red"
-    dateError.innerHTML = "Please period must be less than 11 letters"
-    dateError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  } else {
+  // else if (date.value.length > 20) {
+  //   date.style.border = "2px solid red"
+  //   dateError.innerHTML = "Please period must be less than 11 letters"
+  //   dateError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+  //   error++
+  // } 
+  else {
     date.style.border = "2px solid green"
     dateError.textContent = "";
   }

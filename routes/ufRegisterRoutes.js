@@ -13,7 +13,7 @@ router.post("/ufregister", async (req, res) => {
     try {
         const register = new ufRegister(req.body);
         await register.save()
-        res.redirect("/home")
+        res.redirect("/signup")
         console.log(req.body)
     }
     catch (err) {

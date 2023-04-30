@@ -12,6 +12,7 @@ const passport = require('passport')
 //require('dotenv').config();
 
 const config = require('./config/database.js')
+
 const cartRoutes = require('./routes/cartRoutes')
 const checkoutRoutes = require('./routes/checkoutRoutes')
 const aboutRoutes = require('./routes/aboutRoutes')

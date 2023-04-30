@@ -75,7 +75,6 @@ div(w3-include-html='../includes/navbar.html')
             th(scope='col') Unique ID 
             th(scope='col') Ward
             th(scope='col') Email
-            th(scope='col') Address
             th(scope='col') Status
         tbody
         if FarmerOnes.length 
@@ -85,14 +84,13 @@ div(w3-include-html='../includes/navbar.html')
                   td #{urbanFarmer.username}
                   td #{urbanFarmer.ward}
                   td #{urbanFarmer.email}
-                  td #{urbanFarmer.address}
                   td
                     button.btn.btn-success(type='submit') Appointed
         else 
             p 
               h4 There are no Urban Farmers registered yet            
 // Nav starts here
-div(w3-include-html='../includes/footer.html')
+//div(w3-include-html='../includes/footer.html')
 // Nav ends here
 script(src='../js/custom.js')
 script(src='../css/boostrap-5.3/js/bootstrap.bundle.js')

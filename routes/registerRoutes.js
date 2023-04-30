@@ -126,7 +126,7 @@ router.get("/foDash", connectEnsureLogin.ensureLoggedIn(), async (req, res) => {
 });
 
 // delete route
-router.post("/students/delete", async (req, res) => {
+router.post("/foDash/delete", async (req, res) => {
     try {
         await Register.deleteOne({ _id: req.body.id });
         res.redirect("back")
