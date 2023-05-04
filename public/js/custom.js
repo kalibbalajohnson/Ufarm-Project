@@ -65,7 +65,6 @@ function show3(){
   // document.getElementById('button1').style.backgroundColor="white"
 }
 
-function showalert(){
-  document.querySelector("#alert").innerHTML= 'Succesfully Confirmed! Your order is onthe way';
-  document.getElementById('alert').style.color="green";
+function function1(){
+  swal("Order comfirmed", "Return to first page to make another order!", "success")
 }

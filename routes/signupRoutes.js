@@ -26,7 +26,7 @@ router.post("/signup", async (req, res) => {
         }
     }
     catch (error) {
-        res.status(400).send('sorry seems thrs trouble accesing this page')
+        res.status(400).send('sorry seems there is trouble accesing this page')
         console.log(error)
     }
 });

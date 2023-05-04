@@ -141,7 +141,7 @@ const Validate1 = (event) => {
   let wardError = document.getElementById("wardErr")
   let idError = document.getElementById("idErr")
   let dorError = document.getElementById("dorErr");
-  let dobError = document.getElementById("dorErr");
+  let dobError = document.getElementById("dobErr");
   let activityError = document.getElementById("actErr");
   let ninError = document.getElementById("ninErr");
   let contactError = document.getElementById("contactErr");
@@ -298,30 +298,37 @@ const Validate1 = (event) => {
 
 
   // date of birth validations
-  if (DOB.value == "") {
-    DOB.style.border = "2px solid red"
-    dobError.innerHTML = "Please date of birth can not be empty"
-    dobError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  }
+  // Get the value of the input field
+const dobInput = DOB.value;
 
-  // else if (DOB.value.length < 8) {
-  //   DOB.style.border = "2px solid red"
-  //   dobError.innerHTML = "Please date of birth must be atleast 8 characters"
-  //   dobError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-  //   error++
-  // }
+// Check if the input field is empty
+if (dobInput == "") {
+  DOB.style.border = "2px solid red";
+  dobError.innerHTML = "Please enter your date of birth";
+  dobError.style.color = "red";
+  dobError.style.fontSize = "11px";
+  dobError.style.fontFamily = "Arial, Helvetica, sans-serif";
+  error++;
+} else {
+  // Create a Date object from the input value
+  const dob = new Date(dobInput);
+  // Calculate the age of the user based on their date of birth
+  const age = (new Date()).getFullYear() - dob.getFullYear();
 
-  // else if (DOB.value.length > 8) {
-  //   DOB.style.border = "2px solid red"
-  //   dobError.innerHTML = "Please date of birth must be less than 9 characters"
-  //   dobError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-  //   error++
-  // } 
-  else {
-    DOB.style.border = "2px solid green"
+  // Check if the user is above 18 years old
+  if (age < 18) {
+    DOB.style.border = "2px solid red";
+    dobError.innerHTML = "You must be at least 18 years old to register";
+    dobError.style.color = "red";
+    dobError.style.fontSize = "11px";
+    dobError.style.fontFamily = "Arial, Helvetica, sans-serif";
+    error++;
+  } else {
+    DOB.style.border = "2px solid green";
     dobError.textContent = "";
   }
+}
+
 
 
   // date of registration validations
@@ -433,7 +440,7 @@ const Validate2 = (event) => {
   let wardError = document.getElementById("wardErr")
   let idError = document.getElementById("idErr")
   let dorError = document.getElementById("dorErr");
-  let dobError = document.getElementById("dorErr");
+  let dobError = document.getElementById("dobErr");
   let activityError = document.getElementById("actErr");
   let ninError = document.getElementById("ninErr");
   let contactError = document.getElementById("contactErr");
@@ -590,30 +597,44 @@ const Validate2 = (event) => {
 
 
   // date of birth validations
-  if (DOB.value == "") {
-    DOB.style.border = "2px solid red"
-    dobError.innerHTML = "Please date of birth can not be empty"
-    dobError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
-  }
+  // Get the value of the input field
+const dobInput = DOB.value;
 
-  // else if (DOB.value.length < 8) {
-  //   DOB.style.border = "2px solid red"
-  //   dobError.innerHTML = "Please the date of birth must be atleast 8 letters"
-  //   dobError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-  //   error++
-  // }
+// Check if the input field is empty
+if (dobInput == "") {
+  DOB.style.border = "2px solid red";
+  dobError.innerHTML = "Please enter your date of birth";
+  dobError.style.color = "red";
+  dobError.style.fontSize = "11px";
+  dobError.style.fontFamily = "Arial, Helvetica, sans-serif";
+  error++;
+} else if (new Date(dobInput) > new Date()) {
+  DOB.style.border = "2px solid red";
+  dobError.innerHTML = "Please enter a valid date of birth";
+  dobError.style.color = "red";
+  dobError.style.fontSize = "11px";
+  dobError.style.fontFamily = "Arial, Helvetica, sans-serif";
+  error++;
+} else {
+  // Create a Date object from the input value
+  const dob = new Date(dobInput);
+  // Calculate the age of the user based on their date of birth
+  const age = (new Date()).getFullYear() - dob.getFullYear();
 
-  // else if (DOB.value.length > 8) {
-  //   DOB.style.border = "2px solid red"
-  //   dobError.innerHTML = "Please the date of birth must be less than 9 letters"
-  //   dobError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-  //   error++
-  // } 
-  else {
-    DOB.style.border = "2px solid green"
+  // Check if the user is above 18 years old
+  if (age < 18) {
+    DOB.style.border = "2px solid red";
+    dobError.innerHTML = "You must be at least 18 years old to register";
+    dobError.style.color = "red";
+    dobError.style.fontSize = "11px";
+    dobError.style.fontFamily = "Arial, Helvetica, sans-serif";
+    error++;
+  } else {
+    DOB.style.border = "2px solid green";
     dobError.textContent = "";
   }
+}
+
 
 
   // date of registration validations
@@ -1173,9 +1194,23 @@ const Validate6 = (event) => {
 
   if (error > 0) {
     event.preventDefault()
-  }
+    return false;
+  } else {
+  return true;
+}
 }
 
+function function1(){
+  swal("Order comfirmed", "Return to first page to make another order!", "success")
+}
 
+// if (Validate6(event)) {
+//   function1();
+// }
 
-
+// document.getElementById("checkout").addEventListener("submit", (event) => {
+//   event.preventDefault(); // prevent form from submitting normally
+//   if (Validate6(event)) {
+//     function1();
+//   }
+// });
