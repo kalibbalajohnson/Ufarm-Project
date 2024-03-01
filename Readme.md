@@ -1,4 +1,4 @@
-#Ufarm Project
+#Ufarm Project 
 
 Ufarm is a digital platform that bridges the gap between smallholder farmers and potential buyers in Uganda. The platform allows farmers to showcase their produce and connect directly with potential buyers, eliminating intermediaries and reducing transaction costs.
 
