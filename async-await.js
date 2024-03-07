@@ -2,7 +2,6 @@
 
 // asynchronus - can happen at the same time
 
-
 // sync
 console.log(" I ");
 
